@@ -1,0 +1,13 @@
+<!-- templates/message_detail.html -->
+{% extends 'base.html' %}
+ 
+{% block content %}
+  <div class="message-entry">
+    <h2>{{ message.title }}</h2>
+    <p>Author-{{ message.author }}</p>   
+    <p>{{ message.body }}</p>
+  </div>
+ 
+  <p> <a href="{% url 'message_edit' message.pk %}">+ Edit Message</a> </p>
+  <p><a href="{% url 'message_delete' message.pk %}">+ Delete Message</a></p>
+{% endblock content %}

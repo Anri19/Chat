@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+ 
+{% block content %}
+  {% for message in object_list %}
+    <div class="message-entry">
+      <h3><a href="{% url 'message_detail' message.pk %}">{{ message.title }}</a></h3> 
+      <p>Author- {{ message.author }}</p>
+      <p>{{ message.body }}</p>
+
+    </div>
+  {% endfor %}
+{% endblock content %}
